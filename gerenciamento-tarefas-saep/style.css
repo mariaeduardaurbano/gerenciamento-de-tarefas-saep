@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 16px 0 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 67px;
+  background-color: #0056b3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  color: #ffffff;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+.navbar nav a[aria-disabled="true"] {
+  cursor: default;
+}
+
+.conteudo {
+  margin-top: 13px;
+  padding: 0 4%;
+}
+
+.conteudo h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7px;
+}
+
+.campo label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.campo input {
+  width: 134px;
+  height: 22px;
+  padding: 3px 5px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+
+.campo input:focus {
+  border-color: #0056b3;
+}
+
+.campo select {
+  width: fit-content;
+  min-width: 60px;
+  padding: 3px 5px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+
+button {
+  margin-top: 8px;
+  margin-left: 8px;
+  padding: 4px 9px;
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003f85;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#mensagem {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.sucesso {
+  color: #008000;
+}
+
+.erro {
+  color: #cc0000;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .navbar nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navbar nav a {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   QUADRO DE GERENCIAMENTO
+========================================== */
+
+.quadro {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+  align-items: start;
+}
+
+.coluna {
+  min-width: 0;
+}
+
+.coluna h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.lista-tarefas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Cards */
+.card-tarefa {
+  background-color: #f8f8f8;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.card-tarefa p {
+  margin-bottom: 2px;
+}
+
+/* Botões */
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin: 9px 0 14px;
+}
+
+.botao-card {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 11px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao-card:hover {
+  background-color: #0056b3;
+}
+
+.botao-card.excluir {
+  background-color: #007bff;
+}
+
+/* Alteração de status */
+.controles-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controles-status select {
+  padding: 4px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 11px;
+}
+
+.sem-tarefas {
+  color: #777777;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.sucesso {
+  color: #218838;
+}
+
+.erro {
+  color: #cc0000;
+}
+
+/* Responsividade */
+@media (max-width: 750px) {
+  .quadro {
+    grid-template-columns: 1fr;
+  }
+}
